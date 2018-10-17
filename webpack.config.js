@@ -11,12 +11,6 @@ const rules = [
     exclude: [/node_modules/, /build/],
     loader: "eslint-loader",
   },
-  // {
-  //   enforce: "pre",
-  //   test: /\.(s*)css$/,
-  //   exclude: [/node_modules/, /build/],
-  //   loader: "eslint-loader",
-  // },
   {
     test: /\.js$/,
     exclude: [/node_modules/, /build/],
