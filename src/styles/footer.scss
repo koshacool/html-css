@@ -1,13 +1,5 @@
-@import 'init';
 @import 'variables';
-@import 'header';
-@import 'content';
-@import 'footer';
 
-
-.main-content {
-  min-height: calc(100vh - 42px - 45px);
-}
 
 .main-footer {
   height: 45px;

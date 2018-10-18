@@ -31,12 +31,17 @@ const rules = [
 ];
 const outputDir = getAbsolutePath('build');
 const plugins = [
+  // new SassLintPlugin({
+  //
+  //   failOnWarning: false,
+  //   failOnError: false,
+  //   testing: false
+  // }),
   new HtmlWebpackPlugin({
     template: './index.html',
-    title: 'Design page',
+    title: 'Book store',
     filename: 'index.html'
   }),
-  new SassLintPlugin(),
 ];
 
 module.exports = {
