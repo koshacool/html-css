@@ -3,4 +3,35 @@
 
 .main-content {
   min-height: calc(100vh - 42px - 45px);
+  display: flex;
+  flex-direction: row;
+  
+  .menu-block {
+    min-width: 200px;
+    min-height: 100%;
+    background-color: #181e2c;
+    display: flex;
+    flex-direction: column;
+    
+    .menu-block__item {
+      margin-bottom: 5px;
+      background-color: #1f2637;
+    }
+  
+    .menu-block__item1 {
+      height: 115px;
+    }
+  
+    .menu-block__item2 {
+      height: 240px;
+    }
+  
+    .menu-block__item3 {
+      height: 180px;
+    }
+  
+    .menu-block__item4 {
+      //min-height: calc(100% - 45px - 180px - 240px - 115px);
+    }
+  }
 }
