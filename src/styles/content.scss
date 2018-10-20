@@ -6,32 +6,139 @@
   display: flex;
   flex-direction: row;
   
-  .menu-block {
-    min-width: 200px;
+  .side-menu {
+    max-width: 200px;
+    width: 200px;
     min-height: 100%;
     background-color: #181e2c;
     display: flex;
     flex-direction: column;
     
-    .menu-block__item {
+    .side-menu__item {
       margin-bottom: 5px;
       background-color: #1f2637;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .side-menu__item--link {
+        font-size: 13px;
+        line-height: 38px;
+        height: 38px;
+        width: 100%;
+      }
+    }
+
+    .vertical-scrolable {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      .side-menu__item {
+        img {
+          margin-right: 12px;
+          margin-left: 20px;
+        }
+
+
+
+
+      }
     }
   
-    .menu-block__item1 {
-      height: 115px;
+    .side-menu__item1 {
+      align-items: center;
+
+
+
+      .side-menu__add-button {
+        width: 160px;
+        height: 44px;
+        border-radius: 4px;
+        background-color: #f2795a;
+        color: #ffffff;
+        margin: 35px 0;
+
+        img {
+          width: 13px;
+          height: 13px;
+          margin-right: 20px;
+        }
+      }
     }
   
-    .menu-block__item2 {
-      height: 240px;
+    .side-menu__item3 {
+
+      :first-child {
+        margin-top: 10px;
+      }
+
+      :last-child {
+        margin-bottom: 10px;
+      }
+      .link__circle {
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        margin-right: 12px;
+        margin-left: 20px;
+        border-radius: 6px;
+
+        &.link__circle-1 {
+          background-color: #e64c66;
+        }
+
+        &.link__circle-2 {
+          background-color: #ffab00;
+        }
+
+        &.link__circle-3 {
+          background-color: #00bfdd;
+        }
+
+        &.link__circle-4 {
+          background-color: #7874cf;
+        }
+      }
     }
   
-    .menu-block__item3 {
-      height: 180px;
-    }
-  
-    .menu-block__item4 {
-      //min-height: calc(100% - 45px - 180px - 240px - 115px);
+    .side-menu__item4 {
+      flex: 1;
+      margin-bottom: 0;
+
+      > :first-child {
+        margin-top: 40px;
+      }
+
+      .side-menu__item--link {
+        height: auto;
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 40px;
+
+
+
+        .link-text {
+          max-width: 130px;
+          font-size: 12px;
+          line-height: 1.5;
+
+          span {
+            color: #97b3ce;
+          }
+
+          p {
+            margin: 0;
+
+            &.link-text__time {
+              margin-top: 15px;
+            }
+          }
+        }
+      }
     }
   }
 }
