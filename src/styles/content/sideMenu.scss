@@ -24,11 +24,43 @@
         margin-bottom: 10px;
       }
 
+
+      .side-menu__item-link {
+        font-size: 13px;
+        min-height: 38px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+          width: 12px;
+          height: 12px;
+          margin-right: 12px;
+          margin-left: 20px;
+          vertical-align: middle;
+        }
+
+        &:hover {
+          color: #fff;
+          background-color: #97b3ce;
+        }
+
+        &.side-menu__item-link-active {
+          color: #fff;
+          background-color: #15a4fa;
+
+          &:hover {
+            background-color: #97b3ce;
+          }
+        }
+      }
+
       &.side-menu__item1 {
         align-items: center;
 
         .side-menu__add-button {
-          width: 88%;
+          width: 85%;
           min-height: 44px;
           display: flex;
           flex-wrap: wrap;
@@ -38,6 +70,12 @@
           background-color: #f2795a;
           color: #ffffff;
           margin: 35px 0;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #2f364a;
+            color: #f2795a;
+          }
 
           img, span {
             margin-top: 5px;
@@ -92,15 +130,27 @@
           margin-top: 40px;
         }
 
-        .side-menu__item-link {
+        .history-item {
           height: auto;
           display: flex;
           align-items: baseline;
           margin-bottom: 40px;
+          font-size: 13px;
+          min-height: 38px;
+          width: 100%;
+          cursor: pointer;
+
+          img {
+            width: 12px;
+            height: 12px;
+            margin-right: 12px;
+            margin-left: 20px;
+            vertical-align: middle;
+          }
 
 
 
-          .link-text {
+          .history-item__text {
             max-width: 130px;
             font-size: 12px;
             line-height: 1.5;
@@ -112,33 +162,11 @@
             p {
               margin: 0;
 
-              &.link-text__time {
+              &.time {
                 margin-top: 15px;
               }
             }
           }
-        }
-      }
-
-
-      .side-menu__item-link {
-        font-size: 13px;
-        min-height: 38px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-
-        img {
-          width: 12px;
-          height: 12px;
-          margin-right: 12px;
-          margin-left: 20px;
-          vertical-align: middle;
-        }
-
-        &.side-menu__item-link-active {
-          color: #fff;
-          background-color: #15a4fa;
         }
       }
     }

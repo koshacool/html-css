@@ -33,15 +33,27 @@
       flex-wrap: wrap;
 
       .filters__button {
-        margin: 5px 20px;
+        margin: 5px 10px;
         font-size: 12px;
         line-height: 22px;
+        padding: 0 10px;
+
+        &:hover {
+          border-radius: 9.5px;
+          background-color: #2f364a;
+          padding: 0 10px;
+          color: #fff;
+          cursor: pointer;
+        }
 
         &.filters__buttom-active {
           border-radius: 9.5px;
           background-color: #97b3ce;
-          padding: 0 10px;
           color: #fff;
+
+          &:hover {
+            background-color: #2f364a;
+          }
         }
       }
     }
@@ -57,11 +69,17 @@
       input {
         width: 100%;
         height: 32px;
-        border-radius: 15.5px;
+        border-radius: 16px;
         border: solid 1px rgba(140, 151, 178, 0.4);
         background-color: #ffffff;
         padding-left: 20px;
         font-size: 13px;
+        outline: none;
+        color: #8c97b2;
+
+        &:focus {
+          border: solid 1px #15a4fa;
+        }
       }
 
       img {
@@ -81,6 +99,7 @@
     .book-item {
       margin-bottom: 30px;
       margin-left: 20px;
+      cursor: pointer;
 
       .book-item__title {
         font-size: 16px;
