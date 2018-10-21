@@ -22,6 +22,14 @@
     align-items: center;
     align-content: space-around;
     font-size: 12px;
+
+    .navigation__link {
+      &:hover {
+        cursor: pointer;
+        color: #fff;
+        font-size: 13px;
+      }
+    }
     
     .navigation__circles {
       padding-left: 20px;
