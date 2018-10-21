@@ -2,20 +2,20 @@
 
 
 .main-footer {
-  height: 45px;
-  background-color: #181e2c;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
   align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #181E2C;
+  height: 45px;
   
   .main-footer__settings, .main-footer__info {
     display: flex;
-    justify-content: center;
-    align-items: center;
     align-content: center;
+    align-items: center;
+    justify-content: center;
     width: 55px;
     height: 45px;
     
@@ -26,10 +26,10 @@
   }
   
   .main-footer__info {
-    background-color: #1f2637;
+    background-color: #1F2637;
   }
   
   .main-footer__settings {
-    background-color: #15a4fa;
+    background-color: #15A4FA;
   }
 }
