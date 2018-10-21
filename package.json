@@ -6,10 +6,11 @@
   "scripts": {
     "lint": "eslint ./src",
     "lint:watch": "esw --watch",
-    "stylelint": "stylelint './src/**/*.css'",
+    "stylelint": "stylelint './src/**/*.scss'",
     "dev": "webpack-dev-server --hot--watch --colors --host 0.0.0.0 --port 8080 --mode development",
     "build": "webpack -p",
-    "lint:sass": "sass-lint -c ./.sass-lint.yml './**/*.scss' -v -i './node_modules/**/*, ./build/**/*'"
+    "styles:lint": "sass-lint -c ./.sass-lint.yml './**/*.scss' -v -i './node_modules/**/*, ./build/**/*'",
+    "styles:fix": "sass-lint-auto-fix"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "node-sass": "^4.9.4",
     "path": "^0.12.7",
     "sass-lint": "^1.12.1",
+    "sass-lint-auto-fix": "^0.15.0",
     "sass-lint-webpack": "^1.0.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",

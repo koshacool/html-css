@@ -3,7 +3,7 @@
 
 
 .main-content {
-  min-height: calc(100vh - 42px - 45px);
   display: flex;
   flex-direction: row;
+  min-height: calc(100vh - 42px - 45px);
 }
