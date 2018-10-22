@@ -1,16 +1,7 @@
-@import '../map/map';
+$maxWidth: 490px;
 
-$hd: (width: 1280px, height: 720px);
-$fullHD: (width: 1920px, height: 1080px);
-
-@mixin if-hd {
-  @media (min-width: #{getPropFromMap($hd, width)}) and (max-width: #{getPropFromMap($fullHD, width) - 1px}) {
-    @content;
-  }
-}
-
-@mixin if-full-hd {
-  @media (min-width: #{getPropFromMap($fullHD, width)}) {
+@mixin if-little-screen {
+  @media (max-width: $maxWidth - 1px) {
     @content;
   }
 }

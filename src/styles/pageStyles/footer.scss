@@ -1,34 +1,38 @@
-@import '../constants/constants';
+@import '../scripts/constants/constants';
+@import '../scripts/boxLayout/flexbox';
 
+$footerImgWidth: 14px;
+$footerImgHeight: $footerImgWidth;
+$infoBlockWidhth: 55px;
 
 .main-footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include layout-type(row, nowrap);
+
   align-content: center;
   align-items: center;
   justify-content: flex-end;
   background-color: $dark;
-  height: 45px;
-  
+  height: $footerHeight;
+
   .main-footer__settings, .main-footer__info {
-    display: flex;
+    @include layout-type(row, nowrap);
+
     align-content: center;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 45px;
-    
+    width: $infoBlockWidhth;
+    height: 100%;
+
     img {
-      width: 14px;
-      height: 14px;
+      width: $footerImgWidth;
+      height: $footerImgHeight;
     }
   }
-  
+
   .main-footer__info {
     background-color: $lightDark;
   }
-  
+
   .main-footer__settings {
     background-color: $blue;
   }

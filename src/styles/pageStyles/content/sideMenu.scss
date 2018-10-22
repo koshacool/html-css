@@ -1,42 +1,79 @@
+@import '../../scripts/constants/constants';
+@import '../../scripts/boxLayout/flexbox';
+@import '../../scripts/cssRules/media';
+
+$sideMenuItemMarginBottom: 5px;
+$sideMenuItemFirstLastChildMargin: 10px;
+$sideMenuItemMinHeight: 38px;
+$sideMenuIconsMarginLeft: $baseMarginLeft;
+$sideMenuIconsMarginRight: 12px;
+$addButtonMargin: 35px;
+$addButtonBorderRadius: 4px;
+$addButtonMinHeight: 44px;
+$addButtonImgMargin: 5px;
+$addButtonImgMarginRight: $baseMarginLeft;
+$addButtonFontSize: 14px;
+
+$circleWidth: 6px;
+$circleHeight: $circleWidth;
+$circleBorderRadius: $circleWidth;
+$circleMarginRight: $sideMenuIconsMarginRight;
+$circleMarginLeft: $sideMenuIconsMarginLeft;
+
+$historyIconWidth: 12px;
+$historyIconHeight: $historyIconWidth;
+$historyItemMinHeight: 38px;
+$historyItemTextMinWidth: 130px;
+
 .side-menu {
-  display: flex;
-  flex-direction: column;
+  @include layout-type(column, nowrap);
+
   background-color: $dark;
-  width: 200px;
-  max-width: 200px;
+  width: $maxSideMenuWidth;
+  max-width: $maxSideMenuWidth;
   min-height: 100%;
 
   .side-menu__item {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    @include layout-type(column, nowrap);
+
     align-content: center;
     align-items: flex-start;
     justify-content: start;
-    margin-bottom: 5px;
+    margin-bottom: $sideMenuItemMarginBottom;
     background-color: $lightDark;
 
     > :first-child {
-      margin-top: 10px;
+      margin-top: $sideMenuItemFirstLastChildMargin;
     }
 
     > :last-child {
-      margin-bottom: 10px;
+      margin-bottom: $sideMenuItemFirstLastChildMargin;
     }
 
     .side-menu__item-link {
+      @include if-little-screen {
+        font-size: $baseSize - 2px;
+      };
+
       display: flex;
       align-items: center;
       cursor: pointer;
       width: 100%;
-      min-height: 38px;
-      font-size: 13px;
+      min-height: $sideMenuItemMinHeight;
+      font-size: $baseSize;
+      cursor: pointer;
 
       img {
-        margin-right: 12px;
-        margin-left: 20px;
-        width: 12px;
-        height: 12px;
+        @include if-little-screen {
+          margin-right: $sideMenuIconsMarginRight / 2;
+          margin-left: $sideMenuIconsMarginLeft / 2;
+          width: $historyIconWidth - 4;
+          height: $historyIconHeight - 4;
+        };
+        margin-right: $sideMenuIconsMarginRight;
+        margin-left: $sideMenuIconsMarginLeft;
+        width: $iconWidth;
+        height: $iconHeight;
         vertical-align: middle;
       }
 
@@ -59,16 +96,21 @@
       align-items: center;
 
       .side-menu__add-button {
-        display: flex;
-        flex-wrap: wrap;
+        @include layout-type(row, wrap);
+        @include if-little-screen {
+          margin-right: $sideMenuIconsMarginRight / 2;
+          margin-left: $sideMenuIconsMarginLeft / 2;
+          min-height: $addButtonMinHeight - 20;
+        };
+
         align-items: center;
         justify-content: center;
-        margin: 35px 0;
-        border-radius: 4px;
+        margin: $addButtonMargin 0;
+        border-radius: $addButtonBorderRadius;
         background-color: $orange;
         cursor: pointer;
         width: 85%;
-        min-height: 44px;
+        min-height: $addButtonMinHeight;
         color: $white;
 
         &:hover {
@@ -77,31 +119,47 @@
         }
 
         img, span {
-          margin-top: 5px;
-          margin-bottom: 5px;
+          margin-top: $addButtonImgMargin;
+          margin-bottom: $addButtonImgMargin;
         }
 
         img {
-          margin-right: 20px;
-          width: 13px;
-          height: 13px;
+          @include if-little-screen {
+            margin-right: $addButtonImgMarginRight / 2;
+            width: $addButtonWidth - 4;
+            height: $addButtonHeight - 4;
+          };
+
+          margin-right: $addButtonImgMarginRight;
+          width: $addButtonWidth;
+          height: $addButtonHeight;
         }
 
         span {
-          font-size: 14px;
+          @include if-little-screen {
+            font-size: $addButtonFontSize - 5px;
+          };
+
+          font-size: $addButtonFontSize;
           font-weight: bold;
         }
       }
     }
 
+
+
     &.side-menu__item3 {
       .link__circle {
+        @include if-little-screen {
+          margin-right: $circleMarginRight / 2;
+          margin-left: $circleMarginLeft / 2;
+        };
         display: inline-block;
-        margin-right: 12px;
-        margin-left: 20px;
-        border-radius: 6px;
-        width: 6px;
-        height: 6px;
+        margin-right: $circleMarginRight;
+        margin-left: $circleMarginLeft;
+        border-radius: $circleBorderRadius;
+        width: $circleWidth;
+        height: $circleHeight;
 
         &.link__circle-1 {
           background-color: $red;
@@ -133,25 +191,33 @@
         display: flex;
         align-items: baseline;
         margin-bottom: 40px;
-        cursor: pointer;
         width: 100%;
         height: auto;
-        min-height: 38px;
-        font-size: 13px;
+        min-height: $historyItemMinHeight;
+        font-size: $baseSize;
 
         img {
-          margin-right: 12px;
-          margin-left: 20px;
-          width: 12px;
-          height: 12px;
+          @include if-little-screen {
+            margin-right: $sideMenuIconsMarginRight / 2;
+            margin-left: $sideMenuIconsMarginLeft / 2;
+            width: $historyIconWidth - 4;
+            height: $historyIconHeight - 4;
+          };
+          margin-right: $sideMenuIconsMarginRight;
+          margin-left: $sideMenuIconsMarginLeft;
+          width: $historyIconWidth;
+          height: $historyIconHeight;
           vertical-align: middle;
         }
 
         .history-item__text {
-          max-width: 130px;
+          @include if-little-screen {
+            font-size: $minSize - 2px;
+          };
+          max-width: $historyItemTextMinWidth;
           line-height: 1.5;
-          font-size: 12px;
-          
+          font-size: $minSize;
+
           span {
             color: $light;
           }
@@ -169,8 +235,8 @@
   }
 
   .vertical-scrolable {
-    display: flex;
+    @include layout-type(column, nowrap);
     flex: 1;
-    flex-direction: column;
+    overflow-y: auto;
   }
 }
