@@ -1,0 +1,5 @@
+@mixin layout-type($typeOfLayout) {
+  display: flex;
+  flex-direction: $typeOfLayout;
+  flex-wrap: nowrap;
+}

@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../constants/constants';
 
 
 .main-footer {
@@ -8,7 +8,7 @@
   align-content: center;
   align-items: center;
   justify-content: flex-end;
-  background-color: #181E2C;
+  background-color: $dark;
   height: 45px;
   
   .main-footer__settings, .main-footer__info {
@@ -26,10 +26,10 @@
   }
   
   .main-footer__info {
-    background-color: #1F2637;
+    background-color: $lightDark;
   }
   
   .main-footer__settings {
-    background-color: #15A4FA;
+    background-color: $blue;
   }
 }

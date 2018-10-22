@@ -1,7 +1,7 @@
 .side-menu {
   display: flex;
   flex-direction: column;
-  background-color: #181E2C;
+  background-color: $dark;
   width: 200px;
   max-width: 200px;
   min-height: 100%;
@@ -14,7 +14,7 @@
     align-items: flex-start;
     justify-content: start;
     margin-bottom: 5px;
-    background-color: #1F2637;
+    background-color: $lightDark;
 
     > :first-child {
       margin-top: 10px;
@@ -41,16 +41,16 @@
       }
 
       &:hover {
-        background-color: #97B3CE;
-        color: #FFFFFF;
+        background-color: $lightBlue;
+        color: $white;
       }
 
       &.side-menu__item-link-active {
-        background-color: #15A4FA;
-        color: #FFFFFF;
+        background-color: $blue;
+        color: $white;
 
         &:hover {
-          background-color: #97B3CE;
+          background-color: $lightBlue;
         }
       }
     }
@@ -65,15 +65,15 @@
         justify-content: center;
         margin: 35px 0;
         border-radius: 4px;
-        background-color: #F2795A;
+        background-color: $orange;
         cursor: pointer;
         width: 85%;
         min-height: 44px;
-        color: #FFFFFF;
+        color: $white;
 
         &:hover {
-          background-color: #2F364A;
-          color: #F2795A;
+          background-color: $darkBlue;
+          color: $orange;
         }
 
         img, span {
@@ -104,19 +104,19 @@
         height: 6px;
 
         &.link__circle-1 {
-          background-color: #E64C66;
+          background-color: $red;
         }
 
         &.link__circle-2 {
-          background-color: #FFAB00;
+          background-color: $yellow;
         }
 
         &.link__circle-3 {
-          background-color: #00BFDD;
+          background-color: $blue;
         }
 
         &.link__circle-4 {
-          background-color: #7874CF;
+          background-color: $purple;
         }
       }
     }
@@ -151,9 +151,9 @@
           max-width: 130px;
           line-height: 1.5;
           font-size: 12px;
-
+          
           span {
-            color: #97B3CE;
+            color: $light;
           }
 
           p {
