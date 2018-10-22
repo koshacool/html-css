@@ -10,7 +10,7 @@ $pageNameLineHeihgt: 70px;
   flex: 1;
 
   .books-block__page-name {
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $softGrey;
     background-color: $lightGrey;
     height: $pageNameBlockHeight;
 
@@ -27,7 +27,7 @@ $pageNameLineHeihgt: 70px;
 
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $softGrey;
     background-color: $lightGrey;
     min-height: 49px;
 
