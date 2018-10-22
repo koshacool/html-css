@@ -1,0 +1,242 @@
+@import '../../scripts/constants/constants';
+@import '../../scripts/boxLayout/flexbox';
+@import '../../scripts/cssRules/media';
+
+$sideMenuItemMarginBottom: 5px;
+$sideMenuItemFirstLastChildMargin: 10px;
+$sideMenuItemMinHeight: 38px;
+$sideMenuIconsMarginLeft: $baseMarginLeft;
+$sideMenuIconsMarginRight: 12px;
+$addButtonMargin: 35px;
+$addButtonBorderRadius: 4px;
+$addButtonMinHeight: 44px;
+$addButtonImgMargin: 5px;
+$addButtonImgMarginRight: $baseMarginLeft;
+$addButtonFontSize: 14px;
+
+$circleWidth: 6px;
+$circleHeight: $circleWidth;
+$circleBorderRadius: $circleWidth;
+$circleMarginRight: $sideMenuIconsMarginRight;
+$circleMarginLeft: $sideMenuIconsMarginLeft;
+
+$historyIconWidth: 12px;
+$historyIconHeight: $historyIconWidth;
+$historyItemMinHeight: 38px;
+$historyItemTextMinWidth: 130px;
+
+.side-menu {
+  @include layout-type(column, nowrap);
+
+  background-color: $dark;
+  width: $maxSideMenuWidth;
+  max-width: $maxSideMenuWidth;
+  min-height: 100%;
+
+  .side-menu__item {
+    @include layout-type(column, nowrap);
+
+    align-content: center;
+    align-items: flex-start;
+    justify-content: start;
+    margin-bottom: $sideMenuItemMarginBottom;
+    background-color: $lightDark;
+
+    > :first-child {
+      margin-top: $sideMenuItemFirstLastChildMargin;
+    }
+
+    > :last-child {
+      margin-bottom: $sideMenuItemFirstLastChildMargin;
+    }
+
+    .side-menu__item-link {
+      @include if-little-screen {
+        font-size: $baseSize - 2px;
+      };
+
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      width: 100%;
+      min-height: $sideMenuItemMinHeight;
+      font-size: $baseSize;
+      cursor: pointer;
+
+      img {
+        @include if-little-screen {
+          margin-right: $sideMenuIconsMarginRight / 2;
+          margin-left: $sideMenuIconsMarginLeft / 2;
+          width: $historyIconWidth - 4;
+          height: $historyIconHeight - 4;
+        };
+        margin-right: $sideMenuIconsMarginRight;
+        margin-left: $sideMenuIconsMarginLeft;
+        width: $iconWidth;
+        height: $iconHeight;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background-color: $lightBlue;
+        color: $white;
+      }
+
+      &.side-menu__item-link-active {
+        background-color: $blue;
+        color: $white;
+
+        &:hover {
+          background-color: $lightBlue;
+        }
+      }
+    }
+
+    &.side-menu__item1 {
+      align-items: center;
+
+      .side-menu__add-button {
+        @include layout-type(row, wrap);
+        @include if-little-screen {
+          margin-right: $sideMenuIconsMarginRight / 2;
+          margin-left: $sideMenuIconsMarginLeft / 2;
+          min-height: $addButtonMinHeight - 20;
+        };
+
+        align-items: center;
+        justify-content: center;
+        margin: $addButtonMargin 0;
+        border-radius: $addButtonBorderRadius;
+        background-color: $orange;
+        cursor: pointer;
+        width: 85%;
+        min-height: $addButtonMinHeight;
+        color: $white;
+
+        &:hover {
+          background-color: $darkBlue;
+          color: $orange;
+        }
+
+        img, span {
+          margin-top: $addButtonImgMargin;
+          margin-bottom: $addButtonImgMargin;
+        }
+
+        img {
+          @include if-little-screen {
+            margin-right: $addButtonImgMarginRight / 2;
+            width: $addButtonWidth - 4;
+            height: $addButtonHeight - 4;
+          };
+
+          margin-right: $addButtonImgMarginRight;
+          width: $addButtonWidth;
+          height: $addButtonHeight;
+        }
+
+        span {
+          @include if-little-screen {
+            font-size: $addButtonFontSize - 5px;
+          };
+
+          font-size: $addButtonFontSize;
+          font-weight: bold;
+        }
+      }
+    }
+
+
+
+    &.side-menu__item3 {
+      .link__circle {
+        @include if-little-screen {
+          margin-right: $circleMarginRight / 2;
+          margin-left: $circleMarginLeft / 2;
+        };
+        display: inline-block;
+        margin-right: $circleMarginRight;
+        margin-left: $circleMarginLeft;
+        border-radius: $circleBorderRadius;
+        width: $circleWidth;
+        height: $circleHeight;
+
+        &.link__circle-1 {
+          background-color: $red;
+        }
+
+        &.link__circle-2 {
+          background-color: $yellow;
+        }
+
+        &.link__circle-3 {
+          background-color: $blue;
+        }
+
+        &.link__circle-4 {
+          background-color: $purple;
+        }
+      }
+    }
+
+    &.side-menu__item4 {
+      flex: 1;
+      margin-bottom: 0;
+
+      > :first-child {
+        margin-top: 40px;
+      }
+
+      .history-item {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 40px;
+        width: 100%;
+        height: auto;
+        min-height: $historyItemMinHeight;
+        font-size: $baseSize;
+
+        img {
+          @include if-little-screen {
+            margin-right: $sideMenuIconsMarginRight / 2;
+            margin-left: $sideMenuIconsMarginLeft / 2;
+            width: $historyIconWidth - 4;
+            height: $historyIconHeight - 4;
+          };
+          margin-right: $sideMenuIconsMarginRight;
+          margin-left: $sideMenuIconsMarginLeft;
+          width: $historyIconWidth;
+          height: $historyIconHeight;
+          vertical-align: middle;
+        }
+
+        .history-item__text {
+          @include if-little-screen {
+            font-size: $minSize - 2px;
+          };
+          max-width: $historyItemTextMinWidth;
+          line-height: 1.5;
+          font-size: $minSize;
+
+          span {
+            color: $light;
+          }
+
+          p {
+            margin: 0;
+
+            &.time {
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .vertical-scrolable {
+    @include layout-type(column, nowrap);
+    flex: 1;
+    overflow-y: auto;
+  }
+}

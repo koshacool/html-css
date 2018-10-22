@@ -1,12 +1,12 @@
-@import 'variables';
+@import '../scripts/constants/constants';
 
 body {
   transition: all .2s;
   margin: 0;
-  background-color: #FFFFFF;
+  background-color: $white;
   padding: 0;
-  color: #78829D;
+  overflow: hidden;
+  color: $lightBlue;
   font-family: ProximaNova;
-  
   box-sizing: border-box;
 }

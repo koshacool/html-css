@@ -1,9 +1,0 @@
-@import './sideMenu';
-@import './booksBlock';
-
-
-.main-content {
-  display: flex;
-  flex-direction: row;
-  min-height: calc(100vh - 42px - 45px);
-}
