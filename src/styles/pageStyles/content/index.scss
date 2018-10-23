@@ -1,0 +1,12 @@
+@import '../../scripts/mixins/flexbox';
+@import '../../scripts/constants/constants';
+@import 'sideMenu';
+@import 'booksBlock';
+
+
+.main-content {
+  @include layout-type(row, nowrap);
+
+  height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+  min-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+}

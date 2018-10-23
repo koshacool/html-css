@@ -8,7 +8,210 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <main id="app">
-  </main>
+<header class="main-header">
+  <nav class="navigation">
+    <div class="navigation__circles">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+    </div>
+    <div class="navigation__title navigation__link">
+      <img class="title__image" src="/src/assets/book.png" >
+      <div class="title__text">MyBookApp</div>
+    </div>
+    <div class="navigation__links">
+      <div class="navigation__link">Help Center</div>
+      <div class="navigation__links__square"></div>
+      <div class="navigation__link">Our Support</div>
+    </div>
+  </nav>
+  <div class="profile">
+    <img class="profile__avatar" src="/src/assets/avatar-01.png" >
+    <div class="profile__name">John Doe</div>
+    <img class="profile__circle" src="/src/assets/.png" >
+  </div>
+</header>
+
+<section class="main-content">
+  <div class="side-menu">
+    <div class="side-menu__item side-menu__item1">
+      <button class="side-menu__add-button">
+        <img src="/src/assets/plus.png" >
+        <span>ADD A BOOK</span>
+      </button>
+    </div>
+
+    <div class="vertical-scrolable">
+      <div class="side-menu__item side-menu__item2">
+      <div class="side-menu__item-link">
+        <img src="/src/assets/book.png" >
+        <span class="link-text">Now Reading</span>
+      </div>
+
+      <div class="side-menu__item-link side-menu__item-link-active">
+        <img src="/src/assets/browse.png" >
+        <span class="link-text">Browse</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <img src="/src/assets/basket.png" >
+        <span class="link-text">Buy Books</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <img src="/src/assets/star.png" >
+        <span class="link-text">Favourite Books</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <img src="/src/assets/list.png" >
+        <span class="link-text">Wishlist</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <img src="/src/assets/clock.png" >
+        <span class="link-text">History</span>
+      </div>
+    </div>
+
+      <div class="side-menu__item side-menu__item3">
+      <div class="side-menu__item-link">
+        <div class="link__circle link__circle-1"></div>
+        <span class="link-text">Must Read Titles</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <div class="link__circle link__circle-2"></div>
+        <span class="link-text">Best Of List</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <div class="link__circle link__circle-3"></div>
+        <span class="link-text">Classic Novels</span>
+      </div>
+
+      <div class="side-menu__item-link">
+        <div class="link__circle link__circle-4"></div>
+        <span class="link-text">Non Fiction</span>
+      </div>
+    </div>
+
+      <div class="side-menu__item side-menu__item4">
+      <div class="history-item">
+        <img src="/src/assets/clock.png" >
+        <div class="history-item__text">
+          <p>
+            You added <span>Fight Club</span> by <span>Chuck Palahniuk</span> to your <span>Must Read Titles</span>.
+          </p>
+          <p class="time">24 minutes ago</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <img src="/src/assets/clock.png" >
+        <div class="history-item__text">
+          <p>
+            You added <span>The Trial</span> by <span>Franz Kafka</span> to your <span>Must Read Titles</span>.
+          </p>
+          <p class="time">48 minutes ago</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="books-block">
+    <div class="books-block__page-name">
+      <span>Browse Available Books</span>
+    </div>
+
+    <div class="books-block__filters">
+      <div class="filters">
+        <div class="filters__button filters__buttom-active">All books</div>
+        <div class="filters__button">Most Recent</div>
+        <div class="filters__button">Most Popular</div>
+        <div class="filters__button">Free Books</div>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Enter Keywords" />
+        <img class="profile__circle" src="/src/assets/search.png" >
+      </div>
+    </div>
+
+    <div class="books-block__books-list">
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+
+      <div class="book-item">
+        <img class="book-item__poster" src="/src/assets/book-cover.png">
+        <div class="book-item__title">Jamie Does</div>
+        <div class="book-item__author">by Jemie Oliver</div>
+        <img class="book-item__rating" src="/src/assets/rating.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="main-footer__info">
+    <img src="/src/assets/.png" />
+  </div>
+  <div class="main-footer__settings">
+    <img src="/src/assets/settings.png" />
+  </div>
+</footer>
 </body>
 </html>

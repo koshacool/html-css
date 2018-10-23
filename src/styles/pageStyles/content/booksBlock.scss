@@ -1,0 +1,154 @@
+@import '../../scripts/constants/constants';
+@import '../../scripts/mixins/flexbox';
+@import '../../scripts/mixins/borders';
+
+$pageNameBlockHeight: 70px;
+$pageNameFontSize: 22px;
+$pageNameLineHeihgt: $pageNameBlockHeight;
+
+$filtersMinHeihgt: 49px;
+$filterButtonMarginLeft: 5px;
+$filterButtonMarginRight: 10px;
+$filterButtonPadding: 10px;
+$filterButtonBorderRadius: 10px;
+
+$searcMinWidht: 150px;
+$searcMaxWidht: 400px;
+$searcMarginLeft: 5px;
+
+$inputHeight: 32px;
+$inputBorderRadius: $inputHeight / 2;
+$inputIconWidht: $inputHeight / 2;
+
+$booksListMargin: 30px;
+$booksListTight: 7px;
+
+$ratingIconWidht: 71px;
+$ratingIconHeight: 13px;
+$bookTitleFontSize: 16px;
+$bookTitleMarginTop: 15px;
+$ratingMarginTop: 10px;
+
+.books-block {
+  @include layout-type(column, nowrap);
+  flex: 1;
+
+  .books-block__page-name {
+    @include border($softGrey);
+    
+    background-color: $lightGrey;
+    height: $pageNameBlockHeight;
+
+    span {
+      margin-left: $baseMarginLeft;
+      line-height: $pageNameLineHeihgt;
+      color: $darkGrey;
+      font-size: $pageNameFontSize;
+    }
+  }
+
+  .books-block__filters {
+    @include layout-type(row, wrap);
+    @include border($softGrey);
+    
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $lightGrey;
+    min-height: $filtersMinHeihgt;
+
+    .filters {
+      @include layout-type(row, wrap);
+      margin-left: $baseMarginLeft;
+
+      .filters__button {
+        margin: $filterButtonMarginLeft 1$filterButtonMarginRight;
+        padding: 0 $filterButtonPadding;
+        line-height: $pageNameFontSize;
+        font-size: $minSize;
+
+        &:hover {
+          border-radius: $filterButtonBorderRadius;
+          background-color: $darkBlue;
+          cursor: pointer;
+          color: $white;
+        }
+
+        &.filters__buttom-active {
+          border-radius: $filterButtonBorderRadius;
+          background-color: $light;
+          color: $white;
+
+          &:hover {
+            background-color: $darkBlue;
+          }
+        }
+      }
+    }
+
+    .search {
+      position: relative;
+      flex: 1;
+      margin: $searcMarginLeft $baseMarginLeft;
+      padding-right: $baseMarginLeft;
+      min-width: $searcMinWidht;
+      max-width: $searcMaxWidht;
+
+      input {
+        outline: none;
+        border: solid 1px $inputBorder;
+        border-radius: $inputBorderRadius;
+        background-color: $white;
+        padding-left: $baseMarginLeft;
+        width: 100%;
+        height: $inputHeight;
+        color: $light;
+        font-size: $baseSize;
+
+        &:focus {
+          border: solid 1px $blue;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: $iconWidth;
+        right: $iconWidth;
+        width: $iconWidth;
+        height: $iconHeight;
+      }
+    }
+  }
+  
+  .books-block__books-list {
+    @include layout-type(row, wrap);
+    margin: $booksListMargin $booksListTight 0 $baseMarginLeft;
+    height: 100%;
+
+    font-size: $minSize;
+    overflow-y: auto;
+
+    .book-item {
+      margin-bottom: $booksListMargin;
+      margin-left: $baseMarginLeft;
+      cursor: pointer;
+
+      .book-item__title {
+        margin-top: $bookTitleMarginTop;
+        color: $darkGrey;
+        font-size: $bookTitleFontSize;
+      }
+
+      .book-item__author {
+        margin-top: $bookTitleMarginTop / 3;
+        color: $lightBlue;
+      }
+
+      .book-item__rating {
+        margin-top: $ratingMarginTop;
+        width: $ratingIconWidht;
+        height: $ratingIconHeight;
+      }
+    }
+  }
+}

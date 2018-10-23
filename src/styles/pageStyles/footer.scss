@@ -1,0 +1,39 @@
+@import '../scripts/constants/constants';
+@import '../scripts/mixins/flexbox';
+
+$footerImgWidth: 14px;
+$footerImgHeight: $footerImgWidth;
+$infoBlockWidhth: 55px;
+
+.main-footer {
+  @include layout-type(row, nowrap);
+
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: $dark;
+  height: $footerHeight;
+
+  .main-footer__settings, .main-footer__info {
+    @include layout-type(row, nowrap);
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: $infoBlockWidhth;
+    height: 100%;
+
+    img {
+      width: $footerImgWidth;
+      height: $footerImgHeight;
+    }
+  }
+
+  .main-footer__info {
+    background-color: $lightDark;
+  }
+
+  .main-footer__settings {
+    background-color: $blue;
+  }
+}
