@@ -25,6 +25,7 @@ $pageNameLineHeihgt: 70px;
   .books-block__filters {
     @include layout-type(row, wrap);
 
+    flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $softGrey;
