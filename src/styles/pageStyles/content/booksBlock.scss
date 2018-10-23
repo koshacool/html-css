@@ -1,16 +1,41 @@
 @import '../../scripts/constants/constants';
-@import '../../scripts/boxLayout/flexbox';
+@import '../../scripts/mixins/flexbox';
+@import '../../scripts/mixins/borders';
 
 $pageNameBlockHeight: 70px;
 $pageNameFontSize: 22px;
-$pageNameLineHeihgt: 70px;
+$pageNameLineHeihgt: $pageNameBlockHeight;
+
+$filtersMinHeihgt: 49px;
+$filterButtonMarginLeft: 5px;
+$filterButtonMarginRight: 10px;
+$filterButtonPadding: 10px;
+$filterButtonBorderRadius: 10px;
+
+$searcMinWidht: 150px;
+$searcMaxWidht: 400px;
+$searcMarginLeft: 5px;
+
+$inputHeight: 32px;
+$inputBorderRadius: $inputHeight / 2;
+$inputIconWidht: $inputHeight / 2;
+
+$booksListMargin: 30px;
+$booksListTight: 7px;
+
+$ratingIconWidht: 71px;
+$ratingIconHeight: 13px;
+$bookTitleFontSize: 16px;
+$bookTitleMarginTop: 15px;
+$ratingMarginTop: 10px;
 
 .books-block {
   @include layout-type(column, nowrap);
   flex: 1;
 
   .books-block__page-name {
-    border-bottom: 1px solid $softGrey;
+    @include border($softGrey);
+    
     background-color: $lightGrey;
     height: $pageNameBlockHeight;
 
@@ -24,33 +49,33 @@ $pageNameLineHeihgt: 70px;
 
   .books-block__filters {
     @include layout-type(row, wrap);
-
+    @include border($softGrey);
+    
     flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $softGrey;
     background-color: $lightGrey;
-    min-height: 49px;
+    min-height: $filtersMinHeihgt;
 
     .filters {
       @include layout-type(row, wrap);
+      margin-left: $baseMarginLeft;
 
       .filters__button {
-        margin: 5px 10px;
-        padding: 0 10px;
+        margin: $filterButtonMarginLeft 1$filterButtonMarginRight;
+        padding: 0 $filterButtonPadding;
         line-height: $pageNameFontSize;
-        font-size: 12px;
+        font-size: $minSize;
 
         &:hover {
-          border-radius: 9.5px;
+          border-radius: $filterButtonBorderRadius;
           background-color: $darkBlue;
           cursor: pointer;
-          padding: 0 10px;
           color: $white;
         }
 
         &.filters__buttom-active {
-          border-radius: 9.5px;
+          border-radius: $filterButtonBorderRadius;
           background-color: $light;
           color: $white;
 
@@ -64,19 +89,19 @@ $pageNameLineHeihgt: 70px;
     .search {
       position: relative;
       flex: 1;
-      margin: 5px 20px;
-      padding-right: 20px;
-      min-width: 150px;
-      max-width: 400px;
+      margin: $searcMarginLeft $baseMarginLeft;
+      padding-right: $baseMarginLeft;
+      min-width: $searcMinWidht;
+      max-width: $searcMaxWidht;
 
       input {
         outline: none;
         border: solid 1px $inputBorder;
-        border-radius: 16px;
+        border-radius: $inputBorderRadius;
         background-color: $white;
-        padding-left: 20px;
+        padding-left: $baseMarginLeft;
         width: 100%;
-        height: 32px;
+        height: $inputHeight;
         color: $light;
         font-size: $baseSize;
 
@@ -87,40 +112,42 @@ $pageNameLineHeihgt: 70px;
 
       img {
         position: absolute;
-        top: 12px;
-        right: 12px;
+        top: $iconWidth;
+        right: $iconWidth;
+        width: $iconWidth;
+        height: $iconHeight;
       }
     }
   }
-
-  .books-block__books_list {
+  
+  .books-block__books-list {
     @include layout-type(row, wrap);
-    margin: 30px 7px 0 20px;
+    margin: $booksListMargin $booksListTight 0 $baseMarginLeft;
     height: 100%;
 
     font-size: $minSize;
     overflow-y: auto;
 
     .book-item {
-      margin-bottom: 30px;
-      margin-left: 20px;
+      margin-bottom: $booksListMargin;
+      margin-left: $baseMarginLeft;
       cursor: pointer;
 
       .book-item__title {
-        margin-top: 15px;
+        margin-top: $bookTitleMarginTop;
         color: $darkGrey;
-        font-size: 16px;
+        font-size: $bookTitleFontSize;
       }
 
       .book-item__author {
-        margin-top: 5px;
+        margin-top: $bookTitleMarginTop / 3;
         color: $lightBlue;
       }
 
       .book-item__rating {
-        margin-top: 10px;
-        width: 71px;
-        height: 13px;
+        margin-top: $ratingMarginTop;
+        width: $ratingIconWidht;
+        height: $ratingIconHeight;
       }
     }
   }

@@ -1,6 +1,6 @@
 @import '../scripts/constants/constants';
-@import '../scripts/boxLayout/flexbox';
-@import '../scripts/cssRules/media';
+@import '../scripts/mixins/flexbox';
+@import '../scripts/mixins/media';
 
 $headerSquareWidht: 4px;
 $headerSquareHeight: $headerSquareWidht;
